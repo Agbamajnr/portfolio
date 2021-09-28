@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="favicon/jpg" href="../img/3.jpg">
+    <title>Add Works</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        ::selection{
+            color: #ffff;
+            background: rgb(142, 73, 232);
+        }
+        body{
+            background: linear-gradient(to left, rgb(101, 196, 101), rgb(29, 162, 202));
+            width: 100%;
+            min-height: 100vh;
+            height: 300px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            background: rgba(255, 255, 255, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: 120px auto;
+            padding: 25px;
+            min-height: 300px;
+            max-height: fit-content;
+            border-radius: 10px;
+            justify-items: space-between;
+            flex-direction: column;
+        }
+        .form label {
+            width: 100%;
+            font-size: 1.2rem;
+            font-style: bold;
+            text-align: center;
+        }
+            .form input {
+            font-size: 1rem;
+            text-align: center;
+            height: 45px;
+            border-color: 1px solid #fff;
+            }
+            .form input:focus{
+            border: 1px solid #0b614d;
+            }
+            .form button {
+            color: #fff;
+            background: linear-gradient(to right, #68EACC 0%, #497BE8 100%);
+            height: 40px;
+            border-radius: 10px;
+            font-size: 20px;
+            }
+            .form button:hover  {
+            transition: 10s;
+            opacity: 0.8;
+            background: linear-gradient(to right, #68EACC 0%, #127a4f 100%);
+            border: 1px solid #fff;
+            }
+            #error-mes {
+                display: none;
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    <h2 id="error-mes">Login failed, <a href="/admin/add-work">Try Again</a></h2>
+    <form action="/Agbama-Jnr" method="post" id="add-work" class="form">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <label for="url"Site Url>Site Url</label>
+        <br>
+        <input type="text" name="url" id="url" required>
+        <br>
+        <button>Add Work</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('#add-work');
+        const mes = document.querySelector('#error-mes');
+
+        const auth_q = prompt('Admin Password:');
+        const admin_pwd = 'Kate1973';
+
+
+        if (auth_q !== admin_pwd) {
+            form.style.display = 'none';
+            alert('Admin login failed, Wrong Password');
+            mes.style.display = 'block';
+        } else {
+            form.style.display = 'inherit';
+        }
+    </script>
+</body>
+</html>
