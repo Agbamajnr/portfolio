@@ -103,7 +103,7 @@ app.post('/Agbama-Jnr/contact' , (req , res)=>{
       if(err) {
          res.redirect('/Agbama-Jnr/contact')
       } else {
-         res.redirect('/Agbama-Jnr/');
+         res.redirect('/Agbama-Jnr');
       }
    })
 
